@@ -1,4 +1,5 @@
 #include "Formula.h"
+
 formula_tree::formula_tree(){
 
 }
