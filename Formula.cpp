@@ -8,8 +8,22 @@ bool formulaTree::parse(string exp){	//Tree Construct Function
 	stack<string> operator_stack;
 	stringstream str(exp);
 	string cur_op;
-	while(str>>exp){
+	while(str>>cur_op){
+		if(openParantheses(cur_op)){	//Pushing Open Parantheses
+			operator_stack.push(cur_op);
+			continue;
+		}
+		if(closeParantheses(cur_op)){	//Pop Operators and construct tree here
 
+		}
+		if(unary_precedence.find(cur_op)!=unary_precedence.end() || binary_precedence.find(cur_op)!=binary_precedence.end()){
+			//Checking if Operator and Pushing into Operator Stack
+			operator_stack.push(cur_op);
+			continue;
+		}
+		//For all other cases(Current string is a variable)
+		tree* node = new tree(cur_op);
+		formula_stack.push(node);
 	}
 	return 1;
 }

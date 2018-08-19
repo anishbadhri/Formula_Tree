@@ -8,25 +8,28 @@
 using namespace std;
 
 class formulaTree{
-	public:
-		static string matchingParantheses(string s);
+        public:
+                static string matchingParantheses(string s);
                 inline static bool openParantheses(string s){ return s=="("||s=="{"||s=="["; }
                 inline static bool closeParantheses(string s){ return s==")"||s=="}"||s=="]"; };
-		formulaTree(){
+                formulaTree(){
+                }
+                bool parse(string s);
+                bool addUnaryOperator(string s, int p);
+                bool addBinaryOperator(string s, int p);
 
-		}
-		bool parse(string s);
-		bool addUnaryOperator(string s, int p);
-		bool addBinaryOperator(string s, int p);
-
-	private:
-		class tree{
+        private:
+                class tree{
                         public:
-			     std::vector<tree*> c;
-		};
+                                tree(string s){
+                                        value = s;
+                                }
+                                std::vector<tree*> c;
+                                string value;
+                };
                 tree* root;
-		map<string, int> unary_precedence; //For custom unary operators
-		map<string, int> binary_precedence; //For custom binary operators
+        	map<string, int> unary_precedence; //For custom unary operators
+        	map<string, int> binary_precedence; //For custom binary operators
 };
 
 #endif
