@@ -13,4 +13,4 @@ g++ *.cpp
 ```
 
 ## Current Status
-Create Skeleton of Class and Started Tree Construction
+Create skeleton of formula_tree class and started Tree Construction
