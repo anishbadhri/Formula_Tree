@@ -1,9 +1,16 @@
 #include "Formula.h"
 
 
-bool formulaTree::parse(string s){	//Tree Construct Function
+bool formulaTree::parse(string exp){	//Tree Construct Function
 	if(unary_precedence.size()== 0 && binary_precedence.size() == 0)
 		return 0;
+	stack<tree*> formula_stack;
+	stack<string> operator_stack;
+	stringstream str(exp);
+	string cur_op;
+	while(str>>exp){
+
+	}
 	return 1;
 }
 

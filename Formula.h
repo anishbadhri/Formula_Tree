@@ -1,6 +1,6 @@
 #ifndef FORMULA_CLASS
 
-#define matching_brackets matching_parantheses
+#define matchingBrackets matchingParantheses
 #define FORMULA_CLASS
 
 #include <bits/stdc++.h>
@@ -10,6 +10,8 @@ using namespace std;
 class formulaTree{
 	public:
 		static string matchingParantheses(string s);
+                inline static bool openParantheses(string s){ return s=="("||s=="{"||s=="["; }
+                inline static bool closeParantheses(string s){ return s==")"||s=="}"||s=="]"; };
 		formulaTree(){
 
 		}
@@ -19,8 +21,10 @@ class formulaTree{
 
 	private:
 		class tree{
-			std::vector<tree*> c;
+                        public:
+			     std::vector<tree*> c;
 		};
+                tree* root;
 		map<string, int> unary_precedence; //For custom unary operators
 		map<string, int> binary_precedence; //For custom binary operators
 };
