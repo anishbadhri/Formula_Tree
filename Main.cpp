@@ -8,5 +8,7 @@ int main() {
 	F.addBinaryOperator("^",3);
 	F.addBinaryOperator("v",3);
 	F.addUnaryOperator("!",2);
+        bool x = F.parse("( a ^ ( ( ! b ) v c ) )");
+        cout<<x<<endl;
 }
 

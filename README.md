@@ -13,4 +13,4 @@ g++ *.cpp
 ```
 
 ## Current Status
-Create skeleton of formula_tree class and started Tree Construction
+Completed Formula Tree Construction without Testing

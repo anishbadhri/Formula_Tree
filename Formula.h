@@ -12,6 +12,8 @@ class formulaTree{
                 static string matchingParantheses(string s);
                 inline static bool openParantheses(string s){ return s=="("||s=="{"||s=="["; }
                 inline static bool closeParantheses(string s){ return s==")"||s=="}"||s=="]"; };
+                inline bool isUnary(string s){ return unary_precedence.find(s)!=unary_precedence.end(); }
+                inline bool isBinary(string s){ return binary_precedence.find(s)!=binary_precedence.end(); }
                 formulaTree(){
                 }
                 bool parse(string s);
