@@ -2,14 +2,33 @@
 
 #define BOOLEXPR_CLASS
 
-#include <iostream>
 #include "Formula.h"
 
-using namespace std;
-
-class booleanExpr{
+class booleanExpr : public formulaTree{
 	public:
+		booleanExpr(){
+			if(init_op==false){
+				addOperators();
+			}
+			expression="";
+		}
 
+		booleanExpr(string def){
+			if(init_op==false){
+				addOperators();
+			}
+			expression=def;			
+		}
+
+
+
+
+	protected:
+
+	private:
+		string expression;
+		static bool init_op;
+		void addOperators();
 
 };
 

@@ -3,7 +3,12 @@
 #define matchingBrackets matchingParantheses
 #define FORMULA_CLASS
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <map>
+#include <vector>
+#include <stack>
 
 using namespace std;
 
