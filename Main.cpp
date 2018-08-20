@@ -1,5 +1,4 @@
 #include "Formula.h"
-#include "FormulaSpec.h"
 
 //Fully Paranthesized Input separated by spaces
 //( ( a v c ) ^ ( ! b ) )

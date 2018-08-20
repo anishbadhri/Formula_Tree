@@ -16,6 +16,7 @@ class formulaSpec{
                 inline bool isEmpty(){ return unary_precedence.size()==0 && binary_precedence.size()==0; }
                 inline int getUPrecedence(string e){ return unary_precedence[e]; }
                 inline int getBPrecedence(string e){ return binary_precedence[e]; }
+                inline bool isVariable(string e){ return !unary_precedence.count(e) && !binary_precedence.count(e); }
                 bool addUnaryOperator(string s, int p);
                 bool addBinaryOperator(string s, int p);
 
@@ -27,3 +28,4 @@ class formulaSpec{
 };
 
 #endif
+

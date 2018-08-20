@@ -6,10 +6,11 @@
 #include <sstream>
 #include <vector>
 #include <stack>
-#include "FormulaSpec.h"
+#include "FormulaSpec.cpp"
 
 class formulaTree{
         public:
+                formulaTree(){}
                 formulaTree(formulaSpec sp){
                         spec=sp;
                 }

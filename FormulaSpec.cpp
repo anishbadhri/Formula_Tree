@@ -17,3 +17,4 @@ bool formulaSpec::addBinaryOperator(string s, int p){	//Operator,Precedence
 	else return 0;
 	return 1;
 }
+
