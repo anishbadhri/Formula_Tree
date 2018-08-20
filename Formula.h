@@ -34,7 +34,7 @@ class formulaTree{
                                 std::vector<tree*> c;
                                 string value;
                 };
-                tree* root;
+                tree *root;
         	map<string, int> unary_precedence; //For custom unary operators
         	map<string, int> binary_precedence; //For custom binary operators
 };

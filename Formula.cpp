@@ -93,8 +93,11 @@ bool formulaTree::parse(string exp){	//Tree Construct Function
 		tree* node = new tree(cur_op);
 		formula_stack.push(node);
 	}
-	if(formula_stack.size()==1 && operator_stack.size()==0)
+	if(formula_stack.size()==1 && operator_stack.size()==0){
+		root=formula_stack.top();
+		formula_stack.pop();
 		return 1;
+	}
 	return 0;
 }
 

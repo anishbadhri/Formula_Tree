@@ -17,7 +17,7 @@ class booleanExpr : public formulaTree{
 			if(init_op==false){
 				addOperators();
 			}
-			expression=def;			
+			expression=def;
 		}
 
 
