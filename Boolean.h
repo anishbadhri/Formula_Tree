@@ -3,37 +3,34 @@
 #define BOOLEXPR_CLASS
 
 #include <z3++.h>
-#include "Formula.cpp"
+#include "Formula.h"
 
 using namespace z3;
 
 class booleanExpr : public formulaTree{
 	public:
-
-		// static bool init_op;
-		
 		booleanExpr(){
-			// if(init_op==false){
+			if(init_op==false){
 				addOperators();
-			// }
+			}
 			expression="";
 			converted=NULL;
 		}
 
 		booleanExpr(string def){
-			// if(init_op==false){
+			if(init_op==false){
 				addOperators();
-			// }
+			}
 			expression=def;
 			converted=NULL;
 		}
 
-		// inline static void setInitOp(bool value){ init_op=value; }
+		inline static void setInitOp(bool value){ init_op=value; }
 		expr getZ3Expr(context&);
 
 
 	private:
-
+		static bool init_op;
 		string expression;
 		expr *converted;
 		map<string, expr*> name_table;
@@ -42,6 +39,8 @@ class booleanExpr : public formulaTree{
 		expr extract(tree*, context&);
 
 };
+
+bool booleanExpr::init_op=false;
 
 #endif
 
