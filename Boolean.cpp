@@ -41,9 +41,9 @@ expr booleanExpr::getZ3Expr(context& ctx){
 	return *converted;
 }
 
-int main(){
+// int main(){
 
-	context ctx;
-	booleanExpr b("( a ^ ( ( ! b ) v c ) )");
-	cout << b.getZ3Expr(ctx) << endl;
-}
+// 	context ctx;
+// 	booleanExpr b("( a ^ ( ( ! b ) v c ) )");
+// 	cout << b.getZ3Expr(ctx) << endl;
+// }
