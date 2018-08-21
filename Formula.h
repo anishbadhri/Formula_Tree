@@ -15,12 +15,14 @@ class formulaTree{
                         spec=sp;
                 }
 
+                //Construction Operations
                 static string matchingParantheses(string s);
                 inline static bool openParantheses(string s){ return s=="("||s=="{"||s=="["; }
                 inline static bool closeParantheses(string s){ return s==")"||s=="}"||s=="]"; };
                 bool parse(string s);
 
-
+                //Test Operations
+                string inOrder(){ string s = inOrder(root); return s; }
         protected:
                 class tree{
                         public:
@@ -31,6 +33,7 @@ class formulaTree{
                                 string value;
                 };
                 tree *root;
+                string inOrder(tree* cur);
                 formulaSpec spec;
 };
 

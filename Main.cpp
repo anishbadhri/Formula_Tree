@@ -9,7 +9,7 @@ int main() {
 	F.addBinaryOperator("v",3);
 	F.addUnaryOperator("!",2);
 	formulaTree f(F);
-        bool x = f.parse("( a ^ ( ( ! b ) v c ) )");
-        cout<<x<<endl;
+    bool x = f.parse("( a ^ ( ( ! b ) v c ) )");
+    cout<<f.inOrder()<<endl;
 }
 

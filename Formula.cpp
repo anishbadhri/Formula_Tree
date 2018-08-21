@@ -110,3 +110,19 @@ string formulaTree::matchingParantheses(string s){	//Ease for checking Matching 
 	return "";
 }
 
+string formulaTree::inOrder(tree* cur){
+	string s;
+	if(cur->c.size() == 0){
+		s = cur->value;
+	}
+	else if(cur -> c.size() == 1){
+		s = "( " + cur->value;
+		s += " " + inOrder(cur->c[0]) + ")";
+	}
+	else{
+		s += "( " + inOrder(cur->c[0]);
+		s += " " + cur->value + " ";
+		s += inOrder(cur->c[1]) + " )";
+	}
+	return s;
+}
