@@ -10,7 +10,7 @@ void booleanExpr::addOperators(){
 
 expr booleanExpr::extract(tree* cur, context& ctx){
 	if(spec.isVariable(cur->value)){
-		// Variable in the tree -> leaf
+		// Variable in the tree -> leaf													
 		if(name_table.find(cur->value)!=name_table.end()){
 			// if variable is already declared in the context
 			return *name_table[cur->value];

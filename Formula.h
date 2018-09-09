@@ -23,18 +23,25 @@ class formulaTree{
 
                 //Test Operations
                 string inOrder(){ string s = inOrder(root); return s; }
+                bool compressTree();
         protected:
                 class tree{
                         public:
                                 tree(string s){
                                         value = s;
+                                        subtree_expression = s;
                                 }
                                 std::vector<tree*> c;
                                 string value;
+                                string subtree_expression;
                 };
                 tree *root;
                 string inOrder(tree* cur);
                 formulaSpec spec;
+                bool assignSubtreeExpression(tree* cur);
+                bool constructFormulaDAG(tree* cur);
+                bool deleteRecursive(tree* cur);
+                map<string,tree*> subtree_hash;
 };
 
 #endif

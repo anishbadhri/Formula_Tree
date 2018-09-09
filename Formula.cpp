@@ -126,3 +126,51 @@ string formulaTree::inOrder(tree* cur){
 	}
 	return s;
 }
+
+bool formulaTree::compressTree(){
+	assignSubtreeExpression(root);
+	subtree_hash.clear();
+	constructFormulaDAG(root);
+}
+bool formulaTree::assignSubtreeExpression(tree* cur){
+	if(cur->c.size()==0){
+		cur->subtree_expression = cur->value;
+		return 1;
+	}
+	cur->subtree_expression = "( " + cur->c[0]->value;
+	for(int i=1;i<cur->c.size();i++){
+		cur->subtree_expression += " " + cur->value + " " + cur->c[i]->value;
+	}
+	cur->subtree_expression += " )";
+	return 1;
+}
+bool formulaTree::constructFormulaDAG(tree* cur){
+	if(cur->c.size()==0)
+		return 1;
+	for(int i = 0;i<cur->c.size();i++)
+		constructFormulaDAG(cur->c[i]);
+	string assgn_value;
+	tree* temp;
+	for(int i=0;i<cur->c.size();i++){
+		if(subtree_hash.find(cur->c[i]->value)!=subtree_hash.end()){
+			assgn_value = cur->c[i]->value;
+			temp = cur->c[i];
+			cur->c[i] = subtree_hash[assgn_value];
+			deleteRecursive(temp);
+		}
+		else{
+			subtree_hash[cur->c[i]->value] = cur->c[i];
+		}
+	}
+	return 1;
+}
+bool formulaTree::deleteRecursive(tree* cur){
+	if(cur->c.size()==0){
+		delete cur;
+		return 1;
+	}
+	for(int i=0;i<cur->c.size();i++)
+		deleteRecursive(cur->c[i]);
+	delete cur;
+	return 1;
+}
