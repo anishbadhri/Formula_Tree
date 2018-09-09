@@ -9,8 +9,8 @@ Include the header<br>
 ```
 Compile the files with<br>
 ```
-g++ *.cpp
+g++ FormulaSpec.cpp Formula.cpp Main.cpp
 ```
 
 ## Current Status
-Completed Formula Tree Construction without Testing
+Completed Tree Compression without Testing
