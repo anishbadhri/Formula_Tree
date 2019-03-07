@@ -23,6 +23,8 @@ class formulaTree{
 
                 //Test Operations
                 string inOrder(){ string s = inOrder(root); return s; }
+                string preOrder(){string s = preOrder(root); return s; }
+                string postOrder(){string s = postOrder(root); return s;}
                 bool compressTree();
         protected:
                 class tree{
@@ -37,6 +39,8 @@ class formulaTree{
                 };
                 tree *root;
                 string inOrder(tree* cur);
+                string preOrder(tree* cur);
+                string postOrder(tree* cur);
                 formulaSpec spec;
                 bool assignSubtreeExpression(tree* cur);
                 bool constructFormulaDAG(tree* cur);
