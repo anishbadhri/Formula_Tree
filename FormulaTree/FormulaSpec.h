@@ -12,14 +12,11 @@ using namespace std;
 
 class formulaSpec{
         public:
-                inline bool isUnary(string s){ return operator_list[s[0]].arity == 1;}
-                inline bool isBinary(string s){ return operator_list[s[0]].arity == 2; }
+                inline int getArity(string s){return operator_list[s[0]].arity;}
                 inline bool isEmpty(){ bool b = 0; for(int i=0;i<256;i++){b |= operator_list[i].arity!=-1;} return !b; }
-                inline int getUPrecedence(string e){ assert(operator_list[e[0]].arity == 1);return operator_list[e[0]].precedence; }
-                inline int getBPrecedence(string e){ assert(operator_list[e[0]].arity == 2);return operator_list[e[0]].precedence; }
+                inline int getPrecedence(string e){ return operator_list[e[0]].precedence; }
                 inline bool isVariable(string e){ return operator_list_set.find(e) == operator_list_set.end(); }
-                bool addUnaryOperator(string s, int p,int a);
-                bool addBinaryOperator(string s, int p,int a);
+                bool addOperator(string s,int arity,int precedence,int associativity);
         private:
                 class operatorSpec{
                 public:

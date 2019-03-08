@@ -5,6 +5,7 @@
 
 #include <sstream>
 #include <vector>
+#include <algorithm>
 #include <stack>
 #include "FormulaSpec.h"
 
@@ -22,10 +23,8 @@ class formulaTree{
                 bool parse(string s);
 
                 //Test Operations
-                string inOrder(){ string s = inOrder(root); return s; }
-                string preOrder(){string s = preOrder(root); return s; }
-                string postOrder(){string s = postOrder(root); return s;}
-                bool compressTree();
+                string printWalk(){ string s = printWalk(root); return s;};
+                // bool compressTree();
         protected:
                 class tree{
                         public:
@@ -38,14 +37,12 @@ class formulaTree{
                                 string subtree_expression;
                 };
                 tree *root;
-                string inOrder(tree* cur);
-                string preOrder(tree* cur);
-                string postOrder(tree* cur);
                 formulaSpec spec;
-                bool assignSubtreeExpression(tree* cur);
-                bool constructFormulaDAG(tree* cur);
-                bool deleteRecursive(tree* cur);
-                map<string,tree*> subtree_hash;
+                string printWalk(tree* cur);
+                
+                // bool assignSubtreeExpression(tree* cur);
+                // bool constructFormulaDAG(tree* cur);
+                // map<string,tree*> subtree_hash;
 };
 
 #endif
