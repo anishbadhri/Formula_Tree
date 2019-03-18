@@ -2,7 +2,7 @@
 
 //Fully Paranthesized Input separated by spaces
 //( ( a v c ) ^ ( ! b ) )
-
+using namespace std;
 int main() {
 	formulaSpec F;
 	F.addOperator("^",2,3,0);
@@ -12,6 +12,10 @@ int main() {
 	formulaTree f(F);
 
 	bool x = f.parse("( ( ( a ^ c ) ^ ( ( b v c ) v d ) ) ? a d )");
+	if(!x){
+		cout<<"Failed Parsing\n";
+		return 0;
+	}
 	//f.compressTree();
 	cout<<f.printWalk()<<endl;
 }

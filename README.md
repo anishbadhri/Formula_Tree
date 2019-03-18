@@ -15,7 +15,6 @@ g++ FormulaTree/FormulaSpec.cpp FormulaTree/Formula.cpp Main.cpp
 ## Expression Requirements
 * Fully paranthesized expression
 * Spaces between any 2 tokens
-* Length of any operator string is 1
 
 ## Types and Functions
 ### formulaSpec
@@ -29,6 +28,8 @@ Returns TRUE if no operator has been defined for given instance of formulaSpec
 Returns TRUE if input string is not an operator  
 * **bool addOperator(string operator,int arity,int precedence,int associativity)**  
 Adds operator to formulaSpec and returns true on success  
+* **int getHash(string operator)**
+Returns a string hash of operator which lies in the range 0 to 100002
 ### formulaTree  
 * **formulaTree(formulaSpec spec)**  
 Initializes formulaTree with the given formulaSpec  
