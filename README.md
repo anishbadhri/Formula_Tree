@@ -26,10 +26,11 @@ Returns precedence of operator
 Returns TRUE if no operator has been defined for given instance of formulaSpec  
 * **bool isVariable(string s)**  
 Returns TRUE if input string is not an operator  
-* **bool addOperator(string operator,int arity,int precedence,int associativity)**  
+* **bool addOperator(string operator,int arity,int precedence)**  
 Adds operator to formulaSpec and returns true on success  
 * **int getHash(string operator)**
 Returns a string hash of operator which lies in the range 0 to 100002
+
 ### formulaTree  
 * **formulaTree(formulaSpec spec)**  
 Initializes formulaTree with the given formulaSpec  

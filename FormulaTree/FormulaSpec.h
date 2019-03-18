@@ -18,15 +18,14 @@ public:
 	inline bool isEmpty(){ return !initialized_spec; }
 	inline int getPrecedence(std::string e){ return operator_list[getHash(e)].precedence; }
 	inline bool isVariable(std::string e){ return operator_list_set.find(e) == operator_list_set.end(); }
-	bool addOperator(std::string s,int arity,int precedence,int associativity);
+	bool addOperator(std::string s,int arity,int precedence);
 private:
 	bool initialized_spec;
 	class operatorSpec{
 	public:
 		int precedence;
 		int arity;
-		int associativity;
-		operatorSpec(){precedence = arity = associativity = -1;}
+		operatorSpec(){precedence = arity = -1;}
 	};
 	operatorSpec operator_list[100003];
 	std::set<std::string> operator_list_set;
